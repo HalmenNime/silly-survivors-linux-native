@@ -1,14 +1,11 @@
 # Silly Survivors - Universal Native Linux Builder
 
-An interactive, distro-independent build script to run **[Silly Survivors](https://store.steampowered.com/app/4077800)** natively on Linux (Arch Linux, Steam Deck, Ubuntu, Fedora, etc.) with working game saves under the standard `~/.config` folder.
+An interactive, distro-independent build script to run **[Silly Survivors](https://steampowered.com)** natively on Linux (Arch Linux, Steam Deck, Ubuntu, Fedora, etc.) with working game saves under the standard `~/.config` folder.
 
 This completely bypasses the Proton black screen bug caused by Electron/ANGLE graphics driver conflicts.
 
 ## ⚠️ Disclaimer
 **I am NOT the developer of Silly Survivors.** This is an unofficial, open-source community tool created solely to help players run their legitimately purchased game natively under Linux environments. No copyrighted game assets or binaries are distributed within this repository.
-
-## 🎮 Steam Support
-Since this script uses your legitimately owned game files, Steam will recognize this native version correctly. Your Steam overlay, play time tracking, and achievements will work normally out of the box.
 
 ## 💾 How to Transfer Your Saves (Windows / Proton to Native)
 
@@ -60,18 +57,12 @@ Drop the `build-native.sh` script into that `resources` folder, then execute:
 chmod +x build-native.sh
 ./build-native.sh
 ```
-
-### 3. Choose your build mode in the menu:
-* **Option 1 (Unpacked Folder - Recommended):** Creates a standalone folder. It automatically injects `steam_appid.txt`, allowing you to play immediately with full Steam features support.
-* **Option 2 (AppImage):** Packages the entire game into a single portable `.AppImage` file. To keep Steam features working, you have two choices:
-  * **Via Terminal:** Run the file with the Steam ID variable directly:
-    ```bash
-    SteamAppId=4077800 ./Silly_Survivors.AppImage
-    ```
-  * **Via Steam GUI:** Add the AppImage to Steam as a **"Non-Steam Game"** and set its **Launch Options** to:
-    ```bash
-    SteamAppId=4077800 %command%
-    ```
+### 3. Launch the game
+The script will generate a standalone `Silly_Survivors_Linux` folder inside your resources directory. To launch the game, navigate to the folder and run the executable file:
+```bash
+cd Silly_Survivors_Linux
+./silly_32survivors
+```
 
 ## Tested on
 * **OS:** Arch Linux (Kernel 6.18-lts) / Steam Deck
