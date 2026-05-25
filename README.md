@@ -14,17 +14,17 @@ If you previously played the game on Windows or via Proton on Linux, you can eas
 1. Locate your old save folder depending on where you played:
    * **From Windows:**
      Press `Win + R`, type `%appdata%` and hit Enter. Then navigate to:
-     ```bash
+     ```
      Silly Survivors\Local Storage\leveldb\
      ```
    * **From Linux (Proton Prefix):**
      ```bash
-     \$HOME/.local/share/Steam/steamapps/compatdata/4077800/pfx/drive_c/users/steamuser/AppData/Roaming/Silly Survivors/Local Storage/leveldb/
+     $HOME/.local/share/Steam/steamapps/compatdata/4077800/pfx/drive_c/users/steamuser/AppData/Roaming/Silly Survivors/Local Storage/leveldb/
      ```
 
 2. Locate your new **Native Linux** save folder (run the native game at least once to create it):
    ```bash
-   \$HOME/.config/Silly Survivors/Local Storage/leveldb/
+   $HOME/.config/Silly Survivors/Local Storage/leveldb/
    ```
 
 3. Copy all files (`*.log`, `CURRENT`, `MANIFEST`, etc.) from your old Windows/Proton `leveldb` folder and paste them into the new Native Linux `leveldb` folder, overwriting everything.
@@ -57,12 +57,41 @@ Drop the `build-native.sh` script into that `resources` folder, then execute:
 chmod +x build-native.sh
 ./build-native.sh
 ```
-### 3. Launch the game
-The script will generate a standalone `Silly_Survivors_Linux` folder inside your resources directory. To launch the game, navigate to the folder and run the executable file:
+
+### 3. Select your build mode
+The script will prompt you to choose between two modes:
+
+```
+Select your build mode:
+1) Unpacked Folder (Recommended: native steam_appid.txt support, faster launch)
+2) AppImage (Single portable file, requires manual SteamAppId variable)
+```
+
+| | Unpacked Folder | AppImage |
+|---|---|---|
+| **Steam integration** | ✅ Automatic via `steam_appid.txt` | ⚠️ Manual env variable required |
+| **Portability** | Folder with multiple files | Single `.AppImage` file |
+| **Launch speed** | Faster | Slightly slower |
+| **Recommended** | ✅ Yes | For portability only |
+
+### 4. Launch the game
+
+**Unpacked Folder (Mode 1):**
+
+A standalone `Silly_Survivors_Linux` folder will be created inside your `resources` directory. Navigate into it and run:
 ```bash
 cd Silly_Survivors_Linux
 ./silly_32survivors
 ```
+
+**AppImage (Mode 2):**
+
+A `Silly_Survivors.AppImage` file will be created inside your `resources` directory. Launch it with the Steam App ID:
+```bash
+SteamAppId=4077800 ./Silly_Survivors.AppImage
+```
+
+> **Note:** Both outputs are completely standalone. You can move them anywhere you like (e.g. into your `~/Games` folder).
 
 ## Tested on
 * **OS:** Arch Linux (Kernel 6.18-lts) / Steam Deck
