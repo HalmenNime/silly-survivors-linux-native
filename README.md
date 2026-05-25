@@ -1,6 +1,6 @@
 # Silly Survivors - Universal Native Linux Builder
 
-An interactive, distro-independent build script to run **[Silly Survivors](https://steampowered.com)** natively on Linux (Arch Linux, Steam Deck, Ubuntu, Fedora, etc.) with working game saves under the standard `~/.config` folder.
+An interactive, distro-independent build script to run **[Silly Survivors](https://store.steampowered.com/app/4077800/)** natively on Linux (Arch Linux, Steam Deck, Ubuntu, Fedora, etc.) with working game saves under the standard `~/.config` folder.
 
 This completely bypasses the Proton black screen bug caused by Electron/ANGLE graphics driver conflicts.
 
