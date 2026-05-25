@@ -60,19 +60,9 @@ chmod +x build-native.sh
 
 ### 3. Select your build mode
 The script will prompt you to choose between two modes:
-
-```
-Select your build mode:
-1) Unpacked Folder (Recommended: native steam_appid.txt support, faster launch)
-2) AppImage (Single portable file, requires manual SteamAppId variable)
-```
-
-| | Unpacked Folder | AppImage |
-|---|---|---|
-| **Steam integration** | ✅ Automatic via `steam_appid.txt` | ⚠️ Manual env variable required |
-| **Portability** | Folder with multiple files | Single `.AppImage` file |
-| **Launch speed** | Faster | Slightly slower |
-| **Recommended** | ✅ Yes | For portability only |
+ 
+* **Unpacked Folder** *(Recommended)* — generates a plain folder. Includes automatic `steam_appid.txt` so no extra setup is needed.
+* **AppImage** — generates a single portable `.AppImage` file. Requires passing the Steam App ID manually on launch.
 
 ### 4. Launch the game
 
