@@ -29,7 +29,7 @@ If you previously played the game on Windows or via Proton on Linux, you can eas
 
 3. Copy all files (`*.log`, `CURRENT`, `MANIFEST`, etc.) from your old Windows/Proton `leveldb` folder and paste them into the new Native Linux `leveldb` folder, overwriting everything.
 
-Your progress, unlocked characters, and points will now be fully restored on the native Linux build!
+Your progress, skills tree, and points will now be fully restored on the native Linux build!
 
 
 ## Requirements
