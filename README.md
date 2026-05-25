@@ -10,6 +10,31 @@ This completely bypasses the Proton black screen bug caused by Electron/ANGLE gr
 ## 🎮 Steam Support
 Since this script uses your legitimately owned game files, Steam will recognize this native version correctly. Your Steam overlay, play time tracking, and achievements will work normally out of the box.
 
+## 💾 How to Transfer Your Saves (Windows / Proton to Native)
+
+If you previously played the game on Windows or via Proton on Linux, you can easily migrate your progress. To restore your saves on the native Linux version, follow these steps:
+
+1. Locate your old save folder depending on where you played:
+   * **From Windows:**
+     Press `Win + R`, type `%appdata%` and hit Enter. Then navigate to:
+     ```bash
+     Silly Survivors\Local Storage\leveldb\
+     ```
+   * **From Linux (Proton Prefix):**
+     ```bash
+     \$HOME/.local/share/Steam/steamapps/compatdata/4077800/pfx/drive_c/users/steamuser/AppData/Roaming/Silly Survivors/Local Storage/leveldb/
+     ```
+
+2. Locate your new **Native Linux** save folder (run the native game at least once to create it):
+   ```bash
+   \$HOME/.config/Silly Survivors/Local Storage/leveldb/
+   ```
+
+3. Copy all files (`*.log`, `CURRENT`, `MANIFEST`, etc.) from your old Windows/Proton `leveldb` folder and paste them into the new Native Linux `leveldb` folder, overwriting everything.
+
+Your progress, unlocked characters, and points will now be fully restored on the native Linux build!
+
+
 ## Requirements
 
 Before running the script, make sure you have:
@@ -37,7 +62,7 @@ chmod +x build-native.sh
 ```
 
 ### 3. Choose your build mode in the menu:
-* **Option 1 (Unpacked Folder - Recommended):** Creates a standalone folder. It automatically injects `steam_appid.txt`, allowing you to play immediately with full Steam and achievements support.
+* **Option 1 (Unpacked Folder - Recommended):** Creates a standalone folder. It automatically injects `steam_appid.txt`, allowing you to play immediately with full Steam features support.
 * **Option 2 (AppImage):** Packages the entire game into a single portable `.AppImage` file. To keep Steam features working, you have two choices:
   * **Via Terminal:** Run the file with the Steam ID variable directly:
     ```bash
