@@ -84,7 +84,7 @@ SteamAppId=4077800 ./Silly_Survivors.AppImage
 > **Note:** Both outputs are completely standalone. You can move them anywhere you like (e.g. into your `~/Games` folder).
 
 ## Tested on
-* **OS:** Arch Linux (Kernel 6.18-lts) / Steam Deck
+* **OS:** Arch Linux (Kernel 6.18-lts)
 * **System Electron version:** v42.2.0
 
 ## License
